@@ -1,0 +1,32 @@
+/* Estilos de la barra de navegación */
+.bg-dark {
+    background-color: #000; /* Fondo negro sólido */
+}
+
+.navbar-brand {
+    font-size: 1.8rem; /* Aumentar el tamaño de la fuente */
+    font-weight: bold; /* Hacer que el texto sea más audaz */
+    color: #fff; /* Color blanco para la marca */
+}
+
+.nav-link {
+    font-size: 1.1rem; /* Tamaño de fuente más grande */
+    color: #fff; /* Color blanco para los enlaces */
+    transition: color 0.3s ease; /* Transición suave para cambios de color */
+}
+
+.nav-link:hover {
+    color: #ffcc00; /* Color dorado al pasar el ratón */
+}
+
+.nav-item.active .nav-link {
+    border-bottom: 2px solid #ffcc00; /* Subrayado dorado para el enlace activo */
+}
+
+.navbar-toggler {
+    border-color: #ffcc00; /* Color de borde del botón de hamburguesa */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 204, 0, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* Icono de hamburguesa dorado */
+}

@@ -1,0 +1,40 @@
+<nav class="container my-5">
+  <h1 class="text-center mb-4">Búsqueda por Rango de Precio</h1>
+
+  <div class="filter-section d-flex justify-content-center mb-4">
+    <div class="input-group me-3">
+      <label for="PrecioMinimo" class="input-group-text">Min:</label>
+      <input type="number" class="form-control" [(ngModel)]="PrecioMinimo" name="PrecioMinimo" [ngModelOptions]="{standalone: true}" placeholder="Precio Mínimo">
+    </div>
+
+    <div class="input-group me-3">
+      <label for="PrecioMaximo" class="input-group-text">Max:</label>
+      <input type="number" class="form-control" [(ngModel)]="PrecioMaximo" name="PrecioMaximo" [ngModelOptions]="{standalone: true}" placeholder="Precio Máximo">
+    </div>
+
+    <button class="btn btn-primary" >Buscar</button>
+  </div>
+
+  <div class="container">
+    @for (item of carros; track item) {
+      @if (item.precio >= PrecioMinimo && item.precio <= PrecioMaximo) {
+        <table class="table table-bordered mb-3" style="width: 100%;">
+          <tr>
+            <td style="width: 150px;">
+              <img src="{{item.imagen}}" alt="Car image" style="width: 100%;">
+            </td>
+            <td>
+              <strong>Marca:</strong> {{item.marca}}
+            </td>
+            <td>
+              <strong>Precio:</strong> ${{item.precio}}
+            </td>
+            <td style="text-align: center; width: 150px;">
+              <button class="btn btn-success" [routerLink]="['/detalles', item.id]">Ver más detalles</button>
+            </td>
+          </tr>
+        </table>
+      }
+    }
+  </div>
+</nav>
